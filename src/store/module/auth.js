@@ -47,7 +47,7 @@ export default{
         return response
     },
     async signIn({commit,dispatch},credentials){
-        let response=await axios.post('login',credentials).catch((e)=>{
+        let response=await axios.post('auth/login',credentials).catch((e)=>{
             console.log(e);
             commit('SET_ERROR',e.response.data.errors)
         })

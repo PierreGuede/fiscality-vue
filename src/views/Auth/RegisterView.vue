@@ -1,38 +1,43 @@
 <template>
     <div class="bg-gray-200 h-screen text-center">
-      <form action="" @submit.prevent="registered">
-          <div>
-            <label for="name">nom</label>
-          <input type="text" v-model="form.name">
-          
+      <div class=" items-center justify-center p-6 sm:p-12 md:w-1/2">
+        <div class="w-full">
+          <h1 class="mb-4 text-xl font-semibold text-gray-700">
+              TECIT
+          </h1></div>
+          <div class="mx-auto w-3/4 shadow-md p-6">
+            <form class="" action="" @submit.prevent="registered">
+              <div class="flex space-x-2">
+                <div class="w-1/2 space-x-2">
+                  <InputView  name="name" labeling="Nom de famille" v-model="form.name" typeInput="text" idInput="name" placeholder="ok" />
+                </div>
+                <div class="w-1/2 space-x-2">
+                  <InputView  name="firstname" labeling="Prénom" v-model="form.firstname" typeInput="text" idInput="firstname" placeholder="ok"/>
+                </div>
+              </div>
+              <div class="wfull space-x-2">
+                <InputView  name="email" labeling="Addresse mail" v-model="form.email" typeInput="email" idInput="email" placeholder="ok"/>
+              </div>
+              <div class="flex space-x-2">
+                <div class="w-1/2 space-x-2">
+                  <InputView  name="password" labeling="Mot de passe" v-model="form.password" typeInput="password" idInput="password" />
+                </div>
+                <div class="w-1/2 space-x-2">
+                  <InputView  name="password_confirmation" labeling="Prénom" v-model="form.password_confirmation" typeInput="password" idInput="password_confirmation"/>
+                </div>
+              </div>
+              <div class="w-1/2 space-x-2">
+                <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring">ok</button>
+              </div>
+              
+            </form>
           </div>
-          <div>
-            <label for="prenom">prenom</label>
-          <input type="text" v-model="form.firstname">
-          
-          </div>
-          <div>
-            <label for="email">email</label>
-          <input type="email" v-model="form.email">
-          
-          </div>
-          <div>
-            <label for="password">password</label>
-          <input type="password" v-model="form.password">
-          
-          </div>
-          <div>
-            <label for="password_confirmation">password_confirmation</label>
-          <input type="password" v-model="form.password_confirmation">
-          
-          </div>
-          <button type="submit">Register</button>
-        </form>
+      </div>
     </div>
 </template>
 <script>
 import { mapActions } from 'vuex';
-
+import InputView  from '@/components/InputView.vue'
 export default {
   name: 'RegisterView',
   data() {
@@ -45,6 +50,9 @@ export default {
         password_confirmation:'',
       }
     }
+  },
+  components: {
+    InputView
   },
   methods: {
     ...mapActions({
