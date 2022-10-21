@@ -28,6 +28,9 @@
             modelValue:{
                 type:[String, Number]
             },
+            essai:{
+                type:[String, Number]
+            },
         },
     }
 </script>

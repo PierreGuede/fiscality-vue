@@ -1,5 +1,5 @@
 <template>
-    <div class=" bg-slate-50 h-screen ">
+    <div class=" bg-slate-50 h-full ">
         <div class="p-4">
             <TopBarView :accountType="user.type_Account"/>
             <div class="mt-4 mx-auto w-96"><span class="text-blue-400">Acceuil <span class="text-black"> > </span> Entreprises </span></div>

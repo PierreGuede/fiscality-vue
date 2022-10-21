@@ -23,11 +23,33 @@ const routes = [
     component: () => import('../views/Admin/IndexView.vue'),
     meta:{requireAuth:true},
     children:[
-      {
-        path: '/company',
-        name: 'IndexView',
-        component: () => import('../views/Admin/Company/CompanyView.vue'),
-      }
+        /* 
+          -- COMPANY --
+        */
+          {
+            path: '/company',
+            name: 'CompanyView',
+            component: () => import('../views/Admin/Company/CompanyView.vue'),
+          },
+          {
+            path: '/company/:id',
+            name: 'CompanyInfoView',
+            component: () => import('../views/Admin/Company/CompanyShowView.vue'),
+          },
+
+          /* 
+          -- BASE --
+        */
+          {
+            path: '/base',
+            name: 'BaseView',
+            component: () => import('../views/Admin/Base/BaseView.vue'),
+          },
+          {
+            path: '/base/:id',
+            name: 'BaseInfoView',
+            component: () => import('../views/Admin/Base/BaseShowView.vue'),
+          },
     ]
   },
   {

@@ -22,9 +22,16 @@ export default{
         },
     },
     actions: {
-        async index({commit}){
+        async index({commit})
+        {
             let response=await axios.get('company');
             commit('SET_COMPANY',response.data.company)
+            return response
+        },
+        async find({commit},id)
+        {
+            let response= await axios.get(`company/${id}`)
+            commit('SET_COMPANY',response.data)
             return response
         }
     }
