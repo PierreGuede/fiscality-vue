@@ -4,6 +4,7 @@
             <TopBarView :accountType="user.type_Account"/>
             <div class="mt-4 mx-auto w-96"><span class="text-blue-400">Acceuil <span class="text-black"> > </span> Entreprises </span></div>
             <div class="p-4 bg-white shadow-md mt-4 w-96 mx-auto">
+                <router-view></router-view>
             </div>
         </div>
         <FooterDashView :accountType="user.type_Account"/>

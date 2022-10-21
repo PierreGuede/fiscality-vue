@@ -21,7 +21,14 @@ const routes = [
     path: '/index',
     name: 'IndexView',
     component: () => import('../views/Admin/IndexView.vue'),
-    meta:{requireAuth:true}
+    meta:{requireAuth:true},
+    children:[
+      {
+        path: '/company',
+        name: 'IndexView',
+        component: () => import('../views/Admin/Company/CompanyView.vue'),
+      }
+    ]
   },
   {
     path: '/about',
