@@ -1,38 +1,55 @@
 <template>
-    <div class="bg-gray-200 h-screen text-center">
-      <div class=" items-center justify-center p-6 sm:p-12 md:w-1/2">
-        <div class="w-full">
-          <h1 class="mb-4 text-xl font-semibold text-gray-700">
-              TECIT
-          </h1></div>
-          <div class="mx-auto w-3/4 shadow-md p-6">
-            <form class="" action="" @submit.prevent="registered">
-              <div class="flex space-x-2">
-                <div class="w-1/2 space-x-2">
-                  <InputView  name="name" labeling="Nom de famille" v-model="form.name" typeInput="text" idInput="name" placeholder="ok" />
-                </div>
-                <div class="w-1/2 space-x-2">
-                  <InputView  name="firstname" labeling="Prénom" v-model="form.firstname" typeInput="text" idInput="firstname" placeholder="ok"/>
-                </div>
-              </div>
-              <div class="wfull space-x-2">
-                <InputView  name="email" labeling="Addresse mail" v-model="form.email" typeInput="email" idInput="email" placeholder="ok"/>
-              </div>
-              <div class="flex space-x-2">
-                <div class="w-1/2 space-x-2">
-                  <InputView  name="password" labeling="Mot de passe" v-model="form.password" typeInput="password" idInput="password" />
-                </div>
-                <div class="w-1/2 space-x-2">
-                  <InputView  name="password_confirmation" labeling="Prénom" v-model="form.password_confirmation" typeInput="password" idInput="password_confirmation"/>
-                </div>
-              </div>
-              <div class="w-1/2 space-x-2">
-                <button type="submit" class="px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-blue-600 border border-transparent rounded-lg active:bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring">ok</button>
-              </div>
-              
-            </form>
+    <div class="bg-gray-200 h-screen ">
+      <main class="bg-white h-screen w-full  text-gray-700 flex">
+        <div class="w-3/5 h-full  flex items-center justify-center ">
+          <div class=" w-4/6 mx-auto space-y-6">
+            <h2 class="text-4xl font-bold ">TECIT</h2>
+            <h6 class=" font-medium text-lg">Mettez un text plus important à ce niveau</h6>
+            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure natus quibusdam quo commodi tenetur, labore hic est accusantium in eligendi sit reiciendis laudantium iste culpa laboriosam exercitationem? Consectetur, esse amet!</p>
+      
+              <small class="block text-gray-400 font-semibold" >Mettez un text de salutation ici</small>
+              <button class="py-3 px-8 border-2 border-blue-500  rounded-md text-blue-500 font-semibold">
+                En savoir plus
+              </button>
           </div>
-      </div>
+      
+      
+        </div>
+        <div class="w-2/5 bg-blue-50/40 flex items-center justify-center ">
+          <div class="w-2/3" >
+          <h6 class="text-2xl text-gray-700 font-semibold mb-2" >Commencez</h6>
+          <p class="text-gray-500 text-sm mb-10">L'inscription ne prend qu'une minute</p>
+          <form action="" class=" space-y-6">
+        
+            <div class="flex gap-x-4">
+               <div class="relative">
+                  <InputView  name="name" labeling="Nom de famille" v-model="form.name" typeInput="text" idInput="name" placeholder="ok" />
+
+                </div>
+                   <div class="relative">
+                    <InputView  name="firstname" labeling="Prénom" v-model="form.firstname" typeInput="text" idInput="firstname" placeholder="ok"/>
+                  </div>
+                </div>
+                   <div class="relative">
+                  <InputView  name="email" labeling="Addresse mail" v-model="form.email" typeInput="email" idInput="email" placeholder="ok"/>
+                </div>
+                   <div class="relative">
+                    <InputView  name="password" labeling="Mot de passe" v-model="form.password" typeInput="password" idInput="password" placeholder="*********"/>
+                  </div>
+                  <div class="relative">
+                    <InputView  name="password_confirmation" labeling="Répétez le mot de passe" v-model="form.password_confirmation" typeInput="password" idInput="password_confirmation" placeholder="*********"/>
+                  </div>
+
+                    <button class="mt-20 px-4 py-3 rounded bg-blue-500 hover:bg-blue-400 text-white font-semibold text-center block w-full focus:outline-none focus:ring focus:ring-offset-2 focus:ring-blue-500 focus:ring-opacity-80 cursor-pointer" >Créer mon compte</button>
+      
+          </form>
+        <p class="text-sm text-center text-gray-500">
+                  J'ai déjà un compte?
+                <a href="#" class="mt-4 inline-block text-sm text-center font-medium text-blue-600 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-500"> Connectez-vous </a>
+                </p>
+          </div>
+        </div>
+      </main>
     </div>
 </template>
 <script>
