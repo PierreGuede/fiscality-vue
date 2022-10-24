@@ -50,6 +50,18 @@ const routes = [
             name: 'BaseInfoView',
             component: () => import('../views/Admin/Base/BaseShowView.vue'),
           },
+
+          /* CATEGORY */
+          {
+            path: '/category',
+            name: 'CategoryView',
+            component: () => import('../views/Admin/Category/CategoryView.vue'),
+          },
+          {
+            path: '/category/:id',
+            name: 'CategoryInfoView',
+            component: () => import('../views/Admin/Category/CategoryShowView.vue'),
+          },
     ]
   },
   {
