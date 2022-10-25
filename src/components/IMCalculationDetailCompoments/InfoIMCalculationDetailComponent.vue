@@ -1,13 +1,13 @@
 <template>
     <div class="p-2 mt-4 space-y-4">
-        <div :class="{ shake: disabled }" class=" p-4 fixed top-8 right-4">
-            <span v-if="disabled" class=" p-4 bg-green-500 rounded-lg text-white">{{ message }}</span>
+        <div :class="{ shake: disabled }" class=" fixed top-8 right-4">
+            <span v-if="disabled" class=" p-2 bg-green-500 rounded-lg text-white">{{ message }}</span>
         </div>
         <div class="flex">
             <div class="w-7/12 self-center">
                 <div class="flex space-x-2">
                     <div class="">
-                        <h1 class="text-xl font-bold">{{ infoCategory.name }}</h1>
+                        <h1 class="text-xl font-bold">{{ infoimCalculationDetail.name }}</h1>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <div class=" bg-white p-4 z-100 w-1/2 mx-auto mt-24 lg:my-8 self-center " >
                 <div class="flex ">
                     <div class="w-11/12">
-                        <h1 class="text-xl font-medium">Ajout d'une category</h1>
+                        <h1 class="text-xl font-medium">Ajout d'un IM</h1>
                     </div>
                     <div class="w-1/12 self-center text-gray-600 text-lg" @click="modal=false">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 self-center cursor-pointer">
@@ -39,9 +39,9 @@
                     </div>
                 </div>
                 <div>
-                    <form action="" @submit.prevent="update(infoCategory.id)">
+                    <form action="" @submit.prevent="update(infoimCalculationDetail.id)">
                         <div class="mt-4">
-                            <InputView :modelValue="infoCategory.name"  name="name" labeling="Nom de la category" v-model="form.name" typeInput="text" idInput="name" />
+                            <InputView :modelValue="infoimCalculationDetail.name"  name="name" labeling="Nom du imCalculationDetaile" v-model="form.name" typeInput="text" idInput="name" placeholder="imCalculationDetaile"/>
                         </div>
                         <div class="mt-4 p-2 text-right">
                             <button type="submit" class="p-2 transition duration-200 bg-blue-400 hover:bg-blue-500 rounded-lg">Modifier</button>
@@ -60,7 +60,7 @@
     import store from "@/store/index"
 
     export default{
-    name:'InfoCategoryView',
+    name:'InfoimCalculationDetailView',
     data() {
         return {
             modal:false,
@@ -72,7 +72,7 @@
         }
     },
     props:{
-        infoCategory:{
+        infoimCalculationDetail:{
             type: Object
             }
         },
@@ -82,12 +82,9 @@
         methods: {
             update(id){
                 this.form.id=id
-                store.dispatch('category/update',this.form).then((data)=>{
-                    console.log(data)
-                    this.$props.infoCategory.id=data.data.category.id,
-                    this.$props.infoCategory.name=data.data.category.name,
-                    this.$props.infoCategory.code=data.data.category.detailType,
-                    this.$props.infoCategory.detailType=data.data.category.itemsIM
+                store.dispatch('imCalculationDetail/update',this.form).then((data)=>{
+                    this.$props.infoimCalculationDetail.id=data.data.imCalculationDetail.id,
+                    this.$props.infoimCalculationDetail.name=data.data.imCalculationDetail.name,
                     this.message=data.data.message
                     this.modal=false
                     this.disabled = true
